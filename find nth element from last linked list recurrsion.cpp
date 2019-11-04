@@ -50,16 +50,15 @@ class linkedList{
     		
 		} 
 		void searchFromLast(node* temp, int last, int &i, int &d){  
-		    i++;
+		    i++;			//counting total elements of th list
 			if(temp == NULL){
 		    	return;
-		    }
-    		searchFromLast(temp->next, last, i, d);
-			
+		    	}
+    		    searchFromLast(temp->next, last, i, d);
 		    int e = i - last;
 		    d++;
 		    if(e==d){
-				cout << "\n" << temp->data << " ";	
+			cout << "\n" << temp->data << " ";	
 		    }
     		
 		}  
@@ -72,10 +71,10 @@ int main(){
 	linkedList S;
 	S.creatList(2);
 	S.creatList(4);
-	S.creatList(3);
+	S.creatList(3); 
 	S.creatList(1);
 	S.creatList(5);
-	S.creatList(6);
+	S.creatList(6);           //6 = nth elemnt from the last
 	node *temp = S.head;
 	S.printList(temp);
 	S.searchFromLast(temp, 6, i, d);
